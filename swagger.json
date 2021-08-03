@@ -1,0 +1,42 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Upstack test API",
+        "description": "Api to get the latest news from newsapi",
+        "contact": {
+            "name": "Daniel Carvalho",
+            "email": "daniel-carvalho.tech@pm.me"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "servers": {
+            "url": "http://localhost:8080/latest-news",
+            "description": "Local development server"
+        },
+        "version": "1.0"
+    },
+    "apis": "index.js",
+    "paths": {
+        "/latest-news": {
+            "get": {
+                "tags": [
+                    "News"
+                ],
+                "summary": "Get all the latest news",
+                "responses": {
+                    "200": {
+                        "description": "All is well"
+                    },
+                    "400": {
+                        "description": "The required header (api-key = 123) was not specified"
+                    },
+                    "500": {
+                        "description": "Problems during NewsAPI access, check console log for more details"
+                    }
+                }
+            }
+        }
+    }
+}
